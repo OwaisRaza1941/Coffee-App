@@ -1,6 +1,8 @@
 import 'package:coffee_app/app/constants/styles.dart';
 import 'package:coffee_app/app/screens/widgets/custom_button.dart';
+import 'package:coffee_app/app/screens/widgets/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -48,6 +50,9 @@ class OnBoardingScreen extends StatelessWidget {
               buttonText: 'Get Started',
               widht: double.infinity,
               height: 56,
+              voidCallback: () {
+                Get.to(HomeScreen());
+              },
             ),
           ),
         ],

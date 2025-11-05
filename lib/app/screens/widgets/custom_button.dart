@@ -5,11 +5,13 @@ class CustomButton extends StatelessWidget {
   final String buttonText;
   final double widht;
   final double height;
+  final VoidCallback voidCallback;
 
   const CustomButton({
     required this.buttonText,
     required this.widht,
     required this.height,
+    required this.voidCallback,
     super.key,
   });
 
@@ -28,7 +30,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
 
-        onPressed: () {},
+        onPressed: voidCallback,
         child: Text(buttonText),
       ),
     );
