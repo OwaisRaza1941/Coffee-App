@@ -1,13 +1,13 @@
 import 'package:coffee_app/app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class ElevatedButtonCustom extends StatelessWidget {
   final String buttonText;
   final double widht;
   final double height;
   final VoidCallback voidCallback;
 
-  const CustomButton({
+  const ElevatedButtonCustom({
     required this.buttonText,
     required this.widht,
     required this.height,

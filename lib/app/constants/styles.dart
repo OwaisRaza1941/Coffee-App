@@ -7,4 +7,9 @@ class Styles {
     fontSize: 30,
     fontWeight: FontWeight.w500,
   );
+
+  static final homeBannerText = GoogleFonts.sora(
+    fontSize: 18,
+    color: Colors.white,
+  );
 }

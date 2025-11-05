@@ -1,6 +1,6 @@
 import 'package:coffee_app/app/constants/styles.dart';
-import 'package:coffee_app/app/screens/widgets/custom_button.dart';
-import 'package:coffee_app/app/screens/widgets/home_screen.dart';
+import 'package:coffee_app/app/screens/home_screen.dart';
+import 'package:coffee_app/app/screens/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,7 +46,7 @@ class OnBoardingScreen extends StatelessWidget {
 
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: CustomButton(
+            child: ElevatedButtonCustom(
               buttonText: 'Get Started',
               widht: double.infinity,
               height: 56,
