@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   CoffeeCategoryButtons(),
                   SizedBox(height: 20),
-                  
+
                   Container(
                     width: 160,
                     height: 250,
@@ -46,11 +46,47 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/images/caffe_mocha.png',
-                          width: 160,
-                          fit: BoxFit.contain,
+                        Stack(
+                          children: [
+                            Image.asset(
+                              'assets/images/caffe_mocha.png',
+                              width: 160,
+                              fit: BoxFit.contain,
+                            ),
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: Container(
+                                width: 70,
+                                height: 40,
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(135, 131, 133, 0.35),
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(15),
+                                    bottomLeft: Radius.circular(35),
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.yellow,
+                                      size: 18,
+                                    ),
+                                    Text(
+                                      '4.8',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
+
                         Text(
                           'Caffe Mocha',
                           style: GoogleFonts.sora(
