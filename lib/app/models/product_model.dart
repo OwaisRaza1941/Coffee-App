@@ -14,4 +14,12 @@ class ProductModel {
   });
 }
 
-
+List<ProductModel> allCoffeeList = [
+  ProductModel(
+    imagePath: imagePath,
+    startRating: startRating,
+    productName: productName,
+    price: price,
+    productLable: productLable,
+  ),
+];
