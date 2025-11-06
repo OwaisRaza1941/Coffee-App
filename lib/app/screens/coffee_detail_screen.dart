@@ -108,8 +108,17 @@ class CoffeeDetailScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  SizedBox(width: 5),
                   Text('(230)', style: GoogleFonts.sora(color: Colors.grey)),
                 ],
+              ),
+              SizedBox(height: 8),
+
+              Divider(
+                thickness: 1,
+                color: Colors.grey.withOpacity(0.3),
+                indent: 10,
+                endIndent: 10,
               ),
             ],
           ),
