@@ -12,6 +12,7 @@ class CoffeeDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(top: 50, left: 20, right: 20),
         child: SingleChildScrollView(
@@ -119,6 +120,21 @@ class CoffeeDetailScreen extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.3),
                 indent: 10,
                 endIndent: 10,
+              ),
+              SizedBox(height: 8),
+
+              Text(
+                'Description',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+
+              Text(
+                productModel.description!,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey.withOpacity(0.8),
+                ),
               ),
             ],
           ),

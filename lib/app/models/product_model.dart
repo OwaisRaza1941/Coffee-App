@@ -4,6 +4,7 @@ class ProductModel {
   String coffeeName;
   String productLable;
   double price;
+  String? description;
 
   ProductModel({
     required this.imagePath,
@@ -11,6 +12,7 @@ class ProductModel {
     required this.coffeeName,
     required this.price,
     required this.productLable,
+    this.description,
   });
 }
 
@@ -21,6 +23,8 @@ List<ProductModel> allCoffeeList = [
     coffeeName: 'Caffe Mocha',
     price: 3.53,
     productLable: 'Deep Foam',
+    description:
+        'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
   ),
   ProductModel(
     imagePath: 'assets/images/flat_white.png',
@@ -28,6 +32,8 @@ List<ProductModel> allCoffeeList = [
     coffeeName: 'Flat White',
     price: 3.53,
     productLable: 'Espresso',
+    description:
+        'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
   ),
   ProductModel(
     imagePath: 'assets/images/latte.png',
@@ -35,6 +41,8 @@ List<ProductModel> allCoffeeList = [
     coffeeName: 'Latte',
     price: 3.53,
     productLable: 'Americano',
+    description:
+        'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
   ),
   ProductModel(
     imagePath: 'assets/images/cordato.png',
@@ -42,5 +50,7 @@ List<ProductModel> allCoffeeList = [
     coffeeName: 'Cordato',
     price: 3.53,
     productLable: 'Doppio',
+    description:
+        'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
   ),
 ];
