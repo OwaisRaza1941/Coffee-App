@@ -9,8 +9,8 @@ import 'widgets/description_section.dart';
 import 'widgets/size_selector.dart';
 
 class CoffeeDetailScreen extends StatelessWidget {
-  final ProductModel productModel;
-  const CoffeeDetailScreen({super.key, required this.productModel});
+  final ProductModel? productModel;
+  const CoffeeDetailScreen({super.key, this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,10 @@ class CoffeeDetailScreen extends StatelessWidget {
             children: [
               DetailAppBar(),
               SizedBox(height: 20),
-              CoffeeImage(product: productModel),
+              CoffeeImage(product: productModel!),
               SizedBox(height: 10),
               Text(
-                productModel.coffeeName,
+                productModel!.coffeeName,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               Row(
@@ -56,7 +56,7 @@ class CoffeeDetailScreen extends StatelessWidget {
                     size: 30,
                   ),
                   Text(
-                    '${productModel.startRating}',
+                    '${productModel!.startRating}',
                     style: GoogleFonts.sora(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -68,14 +68,14 @@ class CoffeeDetailScreen extends StatelessWidget {
               ),
               Divider(thickness: 1, color: Colors.grey.withOpacity(0.3)),
               SizedBox(height: 10),
-              DescriptionSection(product: productModel),
-              
+              DescriptionSection(product: productModel!),
+
               SizedBox(height: 10),
 
               SizeSelector(),
 
               SizedBox(height: 20),
-              PriceBuySection(product: productModel),
+              PriceBuySection(product: productModel!),
             ],
           ),
         ),

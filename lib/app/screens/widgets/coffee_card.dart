@@ -1,11 +1,13 @@
 import 'package:coffee_app/app/constants/colors.dart';
 import 'package:coffee_app/app/constants/styles.dart';
 import 'package:coffee_app/app/models/product_model.dart';
+import 'package:coffee_app/app/screens/cart_screen.dart';
 import 'package:coffee_app/app/screens/coffee_detail_screen.dart';
 import 'package:coffee_app/app/screens/widgets/icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
+import 'package:coffee_app/app/controller/add_to_cart_controller.dart';
 
 class CoffeeCard extends StatelessWidget {
   final String imagePath;
@@ -27,6 +29,8 @@ class CoffeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AddToCartController controller = Get.put(AddToCartController());
+
     return GestureDetector(
       onTap: () {
         Get.to(CoffeeDetailScreen(productModel: productModel));
@@ -95,7 +99,10 @@ class CoffeeCard extends StatelessWidget {
                         backgroundColor: AppColors.buttonAndIconColor,
                         padding: 10,
                         borderRaduis: 3,
-                        voidCallback: () {},
+                        voidCallback: () {
+                          controller.addToCart(productModel);
+                          Get.put(CartScreen());
+                        },
                       ),
                     ],
                   ),
