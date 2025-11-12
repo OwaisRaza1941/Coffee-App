@@ -2,6 +2,7 @@ import 'package:coffee_app/app/components/cart_button.dart';
 import 'package:coffee_app/app/screens/widgets/cart_appbar.dart';
 import 'package:coffee_app/app/screens/widgets/cart_bottom_navigationbar.dart';
 import 'package:coffee_app/app/screens/widgets/cart_product_section.dart';
+import 'package:coffee_app/app/screens/widgets/delivery_options.dart';
 import 'package:coffee_app/app/screens/widgets/discount_cart.dart';
 import 'package:coffee_app/app/screens/widgets/paynemt_summry_section.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,8 @@ class CartScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CartAppbar(),
+              SizedBox(height: 20),
+              DeliveryOption(),
               SizedBox(height: 20),
               Text(
                 'Delivery Address',

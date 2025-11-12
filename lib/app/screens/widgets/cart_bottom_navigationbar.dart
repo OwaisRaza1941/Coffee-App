@@ -11,7 +11,7 @@ class CartBottomNavigationbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 250,
+      height: 210,
       padding: EdgeInsets.all(20),
       decoration: Styles.cartBottomNavigationStyle,
       child: Column(

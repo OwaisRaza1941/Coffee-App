@@ -1,5 +1,5 @@
 import 'package:coffee_app/app/constants/styles.dart';
-import 'package:coffee_app/app/screens/home_screen.dart';
+import 'package:coffee_app/app/screens/main_screen.dart';
 import 'package:coffee_app/app/screens/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,7 +51,7 @@ class OnBoardingScreen extends StatelessWidget {
               widht: double.infinity,
               height: 56,
               voidCallback: () {
-                Get.to(HomeScreen());
+                Get.to(MainScreen());
               },
             ),
           ),
