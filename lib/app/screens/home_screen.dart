@@ -20,25 +20,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void onItemTapped(int index) {
     if (index == 1) {
-      // Favorite screen open
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => const FavoriteScreen()),
+        MaterialPageRoute(builder: (_) => FavoriteScreen()),
       );
     } else if (index == 2) {
-      // Cart screen open
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => const CartScreen()),
-      );
+      Navigator.push(context, MaterialPageRoute(builder: (_) => CartScreen()));
     } else if (index == 3) {
-      // Notification screen open
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => const NotificationsScreen()),
+        MaterialPageRoute(builder: (_) => NotificationsScreen()),
       );
     } else {
-      // Stay on Home
       setState(() {
         selectedIndex = index;
       });
@@ -50,31 +43,28 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      // 👇 Ye tumhara home page ka content hai
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HomeHeader(),
-            const SizedBox(height: 50),
+            HomeHeader(),
+            SizedBox(height: 50),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 50),
+              padding: EdgeInsets.only(left: 20, right: 20, top: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CoffeeCategoryButtons(),
-                  const SizedBox(height: 20),
-
+                  CoffeeCategoryButtons(),
+                  SizedBox(height: 20),
                   GridView.builder(
                     shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 15,
-                          mainAxisSpacing: 20,
-                          childAspectRatio: 0.68,
-                        ),
+                    physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 20,
+                      childAspectRatio: 0.68,
+                    ),
                     itemCount: allCoffeeList.length,
                     itemBuilder: (context, index) {
                       final coffee = allCoffeeList[index];
