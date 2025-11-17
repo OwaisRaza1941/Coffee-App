@@ -1,7 +1,9 @@
 import 'package:coffee_app/app/constants/colors.dart';
 import 'package:coffee_app/app/constants/styles.dart';
+import 'package:coffee_app/app/screens/notifications_screen.dart';
 import 'package:coffee_app/app/screens/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartBottomNavigationbar extends StatelessWidget {
@@ -50,12 +52,14 @@ class CartBottomNavigationbar extends StatelessWidget {
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           ElevatedButtonCustom(
             buttonText: 'Order',
             widht: double.infinity,
             height: 56,
-            voidCallback: () {},
+            voidCallback: () {
+              Get.to(NotificationsScreen());
+            },
           ),
         ],
       ),
