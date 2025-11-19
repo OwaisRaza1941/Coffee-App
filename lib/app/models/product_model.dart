@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class ProductModel {
   String imagePath;
   double startRating;
@@ -6,7 +8,7 @@ class ProductModel {
   double price;
   String? description;
   double? deliveryFee;
-  bool isFavorite;
+  RxBool isFavorite;
 
   ProductModel({
     required this.imagePath,
@@ -16,8 +18,8 @@ class ProductModel {
     required this.productLable,
     this.description,
     this.deliveryFee,
-    this.isFavorite = false,
-  });
+    bool isFavorite = false,
+  }) : isFavorite = isFavorite.obs;
 }
 
 List<ProductModel> allCoffeeList = [

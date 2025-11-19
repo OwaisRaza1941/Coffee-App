@@ -62,4 +62,17 @@ class Styles {
       BoxShadow(blurRadius: 15, color: Colors.black.withOpacity(0.15)),
     ],
   );
+
+  static final favoriteCartStyle = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(20),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.brown.withOpacity(0.15),
+        blurRadius: 15,
+        spreadRadius: 1,
+        offset: Offset(0, 6),
+      ),
+    ],
+  );
 }

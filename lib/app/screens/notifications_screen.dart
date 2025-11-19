@@ -18,8 +18,8 @@ class NotificationsScreen extends StatelessWidget {
               Get.back();
             },
             'assets/icons/back_arrow.png',
-            50, // top
-            20, // left
+            50,
+            20,
           ),
           notificationIcons(() {}, 'assets/icons/gps.png', 50, null, 20),
           NotificationBottomNaviagtionBar(),

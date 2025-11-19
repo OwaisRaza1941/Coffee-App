@@ -1,5 +1,6 @@
 import 'package:coffee_app/app/controller/favorite_controller.dart';
 import 'package:coffee_app/app/screens/widgets/fav_appbar.dart';
+import 'package:coffee_app/app/screens/widgets/favorite_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +10,7 @@ class FavoriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FavoriteController controller = Get.put(FavoriteController());
+    final FavoriteController controller = Get.find();
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -18,20 +19,17 @@ class FavoriteScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FavAppbar(),
+              SizedBox(height: 30),
               Obx(() {
                 return controller.allFavList.isNotEmpty
                     ? ListView.builder(
-                        itemCount: controller.allFavList.length,
                         shrinkWrap: true,
+                        itemCount: controller.allFavList.length,
+                        padding: EdgeInsets.all(0),
                         physics: NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {
-                          final product = controller.allFavList[index];
-                          return Container(
-                            width: double.infinity,
-                            height: 150,
-                            decoration: BoxDecoration(color: Colors.grey),
-                            child: Text(product.coffeeName),
-                          );
+                          var favoriteCart = controller.allFavList[index];
+                          return FavoriteCart(favoriteCart);
                         },
                       )
                     : Center(

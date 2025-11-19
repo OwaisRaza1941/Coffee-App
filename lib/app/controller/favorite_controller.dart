@@ -6,14 +6,13 @@ class FavoriteController extends GetxController {
 
   void toggleFavorite(ProductModel product) {
     // Toggle
-    product.isFavorite = !product.isFavorite;
+    product.isFavorite.value = !product.isFavorite.value;
 
     // Add or remove
-    if (product.isFavorite) {
+    if (product.isFavorite.value) {
       allFavList.add(product);
     } else {
       allFavList.remove(product);
     }
-    update(); // optional for GetBuilder users
   }
 }

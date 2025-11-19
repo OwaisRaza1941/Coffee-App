@@ -15,10 +15,16 @@ class FavAppbar extends StatelessWidget {
           },
           icon: Image.asset('assets/icons/back_arrow.png'),
         ),
-        SizedBox(width: 30),
-        Text(
-          'Favorite',
-          style: GoogleFonts.sora(fontSize: 22, fontWeight: FontWeight.bold),
+        Expanded(
+          child: Center(
+            child: Text(
+              'Favorite',
+              style: GoogleFonts.sora(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ),
       ],
     );

@@ -14,12 +14,13 @@ class CartAppbar extends StatelessWidget {
           },
           icon: Image.asset('assets/icons/back_arrow.png'),
         ),
-
         Expanded(
-          child: Text(
-            'Order',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          child: Center(
+            child: Text(
+              'Order',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ],

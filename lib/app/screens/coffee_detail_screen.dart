@@ -22,7 +22,7 @@ class CoffeeDetailScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DetailAppBar(product: productModel),
+              DetailAppBar(productModel),
               SizedBox(height: 20),
               CoffeeImage(product: productModel),
               SizedBox(height: 10),
