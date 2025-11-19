@@ -5,6 +5,8 @@ class ProductModel {
   String productLable;
   double price;
   String? description;
+  double? deliveryFee;
+  bool isFavorite;
 
   ProductModel({
     required this.imagePath,
@@ -13,6 +15,8 @@ class ProductModel {
     required this.price,
     required this.productLable,
     this.description,
+    this.deliveryFee,
+    this.isFavorite = false,
   });
 }
 
@@ -25,6 +29,7 @@ List<ProductModel> allCoffeeList = [
     productLable: 'Deep Foam',
     description:
         'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
+    deliveryFee: 1.0,
   ),
   ProductModel(
     imagePath: 'assets/images/flat_white.png',
@@ -34,6 +39,7 @@ List<ProductModel> allCoffeeList = [
     productLable: 'Espresso',
     description:
         'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
+    deliveryFee: 2.0,
   ),
   ProductModel(
     imagePath: 'assets/images/latte.png',
@@ -43,6 +49,7 @@ List<ProductModel> allCoffeeList = [
     productLable: 'Americano',
     description:
         'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
+    deliveryFee: 3.0,
   ),
   ProductModel(
     imagePath: 'assets/images/cordato.png',
@@ -52,5 +59,6 @@ List<ProductModel> allCoffeeList = [
     productLable: 'Doppio',
     description:
         'Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but decaffeinated coffee is also commercially available.',
+    deliveryFee: 1.5,
   ),
 ];

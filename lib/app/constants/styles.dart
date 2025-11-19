@@ -54,4 +54,12 @@ class Styles {
       BoxShadow(blurRadius: 10, color: Colors.grey, offset: Offset(4, 3)),
     ],
   );
+
+  static final notificationContainerStyle = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+    boxShadow: [
+      BoxShadow(blurRadius: 15, color: Colors.black.withOpacity(0.15)),
+    ],
+  );
 }

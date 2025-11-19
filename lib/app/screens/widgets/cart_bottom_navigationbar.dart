@@ -1,5 +1,6 @@
 import 'package:coffee_app/app/constants/colors.dart';
 import 'package:coffee_app/app/constants/styles.dart';
+import 'package:coffee_app/app/controller/cart_controller.dart';
 import 'package:coffee_app/app/screens/notifications_screen.dart';
 import 'package:coffee_app/app/screens/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class CartBottomNavigationbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CartController controller = Get.find();
     return Container(
       width: double.infinity,
       height: 210,
@@ -44,14 +46,17 @@ class CartBottomNavigationbar extends StatelessWidget {
               ),
             ],
           ),
-          Text(
-            '\$5.53',
-            style: GoogleFonts.sora(
-              color: AppColors.buttonAndIconColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            ),
-          ),
+          Obx(() {
+            return Text(
+              '\$${controller.totalPayable.toStringAsFixed(2)}',
+              style: GoogleFonts.sora(
+                color: AppColors.buttonAndIconColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            );
+          }),
+
           SizedBox(height: 10),
           ElevatedButtonCustom(
             buttonText: 'Order',

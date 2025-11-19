@@ -1,4 +1,5 @@
 import 'package:coffee_app/app/components/cart_button.dart';
+import 'package:coffee_app/app/controller/cart_controller.dart';
 import 'package:coffee_app/app/screens/widgets/cart_appbar.dart';
 import 'package:coffee_app/app/screens/widgets/cart_bottom_navigationbar.dart';
 import 'package:coffee_app/app/screens/widgets/cart_product_section.dart';
@@ -6,6 +7,7 @@ import 'package:coffee_app/app/screens/widgets/delivery_options.dart';
 import 'package:coffee_app/app/screens/widgets/discount_cart.dart';
 import 'package:coffee_app/app/screens/widgets/paynemt_summry_section.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartScreen extends StatelessWidget {
@@ -13,6 +15,7 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CartController controller = Get.put(CartController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -60,11 +63,15 @@ class CartScreen extends StatelessWidget {
                 indent: 5,
                 endIndent: 5,
               ),
+              SizedBox(height: 10),
               CartProductSection(),
               SizedBox(height: 20),
               DiscountCart(),
               SizedBox(height: 20),
-              PaynemtSummrySection(),
+              PaynemtSummrySection(
+                price: controller.productPrice.value,
+                deliveryFee: controller.deliveryFee.value,
+              ),
             ],
           ),
         ),

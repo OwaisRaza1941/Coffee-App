@@ -1,5 +1,5 @@
 import 'package:coffee_app/app/constants/styles.dart';
-import 'package:coffee_app/app/controller/add_to_cart_controller.dart';
+import 'package:coffee_app/app/controller/cart_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,7 +8,7 @@ class CartProductSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AddToCartController cartController = Get.find<AddToCartController>();
+    final CartController cartController = Get.find<CartController>();
 
     return Obx(() {
       if (cartController.allCartList.isEmpty) {
@@ -22,10 +22,12 @@ class CartProductSection extends StatelessWidget {
       return ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
         itemCount: cartController.allCartList.length,
         itemBuilder: (context, index) {
           final product = cartController.allCartList[index];
           return Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset(
                 product.imagePath,
@@ -47,7 +49,7 @@ class CartProductSection extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(width: 40),
+              Spacer(),
               IconButton(
                 style: Styles.quantityIncreaseButtonStyle,
                 onPressed: () {},
@@ -59,6 +61,7 @@ class CartProductSection extends StatelessWidget {
               Text(
                 '1',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
               IconButton(
                 style: Styles.quantityDecreaseButtonStyle,

@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PaynemtSummrySection extends StatelessWidget {
-  const PaynemtSummrySection({super.key});
+  final double price;
+  final double deliveryFee;
+  const PaynemtSummrySection({
+    super.key,
+    required this.price,
+    required this.deliveryFee,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,7 @@ class PaynemtSummrySection extends StatelessWidget {
             children: [
               Text('Price', style: TextStyle(fontSize: 20)),
               Text(
-                '\$4.53',
+                '\$$price',
                 style: GoogleFonts.sora(
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
@@ -36,7 +42,7 @@ class PaynemtSummrySection extends StatelessWidget {
             children: [
               Text('Devlivery Fee', style: TextStyle(fontSize: 20)),
               Text(
-                '\$1.0',
+                '\$$deliveryFee',
                 style: GoogleFonts.sora(
                   fontWeight: FontWeight.bold,
                   fontSize: 22,

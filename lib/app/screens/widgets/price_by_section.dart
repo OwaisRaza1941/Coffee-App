@@ -1,6 +1,9 @@
 import 'package:coffee_app/app/constants/colors.dart';
+import 'package:coffee_app/app/controller/cart_controller.dart';
 import 'package:coffee_app/app/models/product_model.dart';
+import 'package:coffee_app/app/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PriceBuySection extends StatelessWidget {
@@ -9,6 +12,7 @@ class PriceBuySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CartController controller = Get.put(CartController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -31,7 +35,10 @@ class PriceBuySection extends StatelessWidget {
           ],
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.addToCart(product);
+            Get.to(CartScreen());
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.buttonAndIconColor,
             shape: RoundedRectangleBorder(
