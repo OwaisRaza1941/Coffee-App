@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 Positioned notificationIcons(
+  VoidCallback onPressed,
   String iconPath, [
   double? top,
   double? left,
@@ -19,12 +19,7 @@ Positioned notificationIcons(
         borderRadius: BorderRadius.circular(20),
         color: Colors.grey.withOpacity(0.4),
       ),
-      child: IconButton(
-        onPressed: () {
-          Get.back();
-        },
-        icon: Image.asset(iconPath),
-      ),
+      child: IconButton(onPressed: onPressed, icon: Image.asset(iconPath)),
     ),
   );
 }

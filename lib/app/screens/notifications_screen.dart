@@ -1,6 +1,7 @@
-// import 'package:coffee_app/app/components/notifications_icon.dart';
+import 'package:coffee_app/app/components/notifications_icon.dart';
 import 'package:coffee_app/app/screens/widgets/notification_bottom_naviagtion_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'widgets/map.dart';
 
 class NotificationsScreen extends StatelessWidget {
@@ -12,8 +13,15 @@ class NotificationsScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(child: CustomMap()),
-          // notificationIcons('assets/icons/back_arrow.png'),
-          // notificationIcons('assets/icons/gps.png'),
+          notificationIcons(
+            () {
+              Get.back();
+            },
+            'assets/icons/back_arrow.png',
+            50, // top
+            20, // left
+          ),
+          notificationIcons(() {}, 'assets/icons/gps.png', 50, null, 20),
           NotificationBottomNaviagtionBar(),
         ],
       ),
